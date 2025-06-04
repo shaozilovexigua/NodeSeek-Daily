@@ -6,7 +6,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '00 16 * * *'  # UTC 16:00，即北京时间 00:00
+    - cron: '00 16 * * *'  # UTC 16:00，北京时间 00:00
 
 jobs:
   run-nodeseek-daily:
@@ -24,11 +24,9 @@ jobs:
       - name: Install Chrome and Xvfb
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-browser chromium-chromedriver xvfb
+          sudo apt-get install -y chromium-browser xvfb
           echo "Chrome version:"
           chromium-browser --version
-          echo "ChromeDriver version:"
-          chromedriver --version
 
       - name: Install Python dependencies
         run: |
