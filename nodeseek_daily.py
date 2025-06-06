@@ -226,6 +226,12 @@ def nodeseek_comment(driver):
                 submit_button.click()
                 
                 print(f"已在帖子 {post_url} 中完成评论")
+
+                # 【改动2：每两条评论后，等待 30 分钟】
+                # i 从 0 开始，所以 (i+1)%2 == 0 表示已经评论了第 2、4、6…… 条
+                if (i + 1) % 2 == 0 and (i + 1) < len(selected_urls):
+                    print("已评论两条，等待 30 分钟后继续下一条评论…")
+                    time.sleep(30 * 60)  # 30 分钟（1800 秒）                
                 
                 # 返回交易区
                 # driver.get(target_url)
