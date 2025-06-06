@@ -21,7 +21,7 @@ cookie = os.environ.get("NS_COOKIE") or os.environ.get("COOKIE")
 # 通过环境变量控制是否使用无头模式，默认为 True（无头模式）
 headless = os.environ.get("HEADLESS", "true").lower() == "true"
 
-randomInputStr = ["bd","绑定","帮顶"]
+randomInputStr = ["bd","绑定","帮顶",":xhj010:",":xhj016:"]
 
 def click_sign_icon(driver):
     """
@@ -172,7 +172,7 @@ def nodeseek_comment(driver):
         
         # 过滤掉置顶帖
         valid_posts = [post for post in posts if not post.find_elements(By.CSS_SELECTOR, '.pined')]
-        selected_posts = random.sample(valid_posts, min(20, len(valid_posts)))
+        selected_posts = random.sample(valid_posts, min(2, len(valid_posts)))
         
         # 存储已选择的帖子URL
         selected_urls = []
