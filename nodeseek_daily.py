@@ -229,8 +229,8 @@ def nodeseek_comment(driver):
 
                 # 【改动：每条评论后，等待 13 分钟】
                 if (i + 1) < len(selected_urls):
-                print("已评论一条，等待 13 分钟后继续下一条评论…")
-                time.sleep(13 * 60)  # 13 分钟（780 秒）                
+                    print("已评论一条，等待 13 分钟后继续下一条评论…")
+                    time.sleep(random.uniform(10 * 60, 15 * 60))  # 13 分钟（780 秒）                
                 
                 # 返回交易区
                 # driver.get(target_url)
