@@ -21,7 +21,7 @@ cookie = os.environ.get("NS_COOKIE") or os.environ.get("COOKIE")
 # 通过环境变量控制是否使用无头模式，默认为 True（无头模式）
 headless = os.environ.get("HEADLESS", "true").lower() == "true"
 
-randomInputStr = ["bd","绑定","帮顶",":xhj010: 这价可以",":xhj016: 好","666","不错","d一下"]
+randomInputStr = ["bd","绑定","帮顶",":xhj010: 可以",":xhj016: 好","666","不错","d一下","学习一下"]
 
 def click_sign_icon(driver):
     """
@@ -172,7 +172,7 @@ def nodeseek_comment(driver):
         
         # 过滤掉置顶帖
         valid_posts = [post for post in posts if not post.find_elements(By.CSS_SELECTOR, '.pined')]
-        selected_posts = random.sample(valid_posts, min(20, len(valid_posts)))
+        selected_posts = random.sample(valid_posts, min(10, len(valid_posts)))
         
         # 存储已选择的帖子URL
         selected_urls = []
@@ -230,7 +230,7 @@ def nodeseek_comment(driver):
                 # 【改动：每条评论后，等待 13 分钟】
                 if (i + 1) < len(selected_urls):
                     print("已评论一条，等待 13 分钟后继续下一条评论…")
-                    time.sleep(random.uniform(10 * 60, 15 * 60))  # 13 分钟（780 秒）                
+                    time.sleep(random.uniform(5 * 60, 8 * 60))  # 13 分钟（780 秒）                
                 
                 # 返回交易区
                 # driver.get(target_url)
